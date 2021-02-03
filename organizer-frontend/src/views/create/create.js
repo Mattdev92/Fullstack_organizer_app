@@ -1,11 +1,12 @@
 import React,{useState} from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form,Alert } from "react-bootstrap";
 import {connect} from 'react-redux';
 import {CreateNotes} from '../../actions'
 const Create = ({CreateNotes, type, ...props }) => {
   const [category,setCategory]=useState('Programming')
   const [note,setNote]=useState('Important Note')
   const [title,setTitle]=useState('About React.js')
+  const [success,setSuccess]=useState(false)
   return (
     <Modal
       {...props}
@@ -17,7 +18,7 @@ const Create = ({CreateNotes, type, ...props }) => {
         <Modal.Title id="contained-modal-title-vcenter">{type}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={(event)=>{CreateNotes(title,note,category);  event.preventDefault(); }}>
+        <Form onSubmit={(event)=>{CreateNotes(title,note,category); setSuccess(true); event.preventDefault(); }}>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Title</Form.Label>
             <Form.Control type="text" placeholder="Node.js" onChange={(event)=>setTitle(event.target.value)} />
@@ -38,6 +39,11 @@ const Create = ({CreateNotes, type, ...props }) => {
             <Form.Control as="textarea" rows={3} name="note" onChange={(event)=>setNote(event.target.value)} />
           </Form.Group>
           <Button type="submit">Create {type}</Button>
+          {
+            success&&  <Alert  variant="success">
+            Congratulation ! Yout note is added to your database !
+          </Alert>
+          }
         </Form>
       </Modal.Body>
       <Modal.Footer>

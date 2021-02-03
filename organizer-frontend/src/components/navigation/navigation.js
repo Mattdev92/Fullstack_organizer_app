@@ -22,8 +22,8 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/tasks">All tasks</Nav.Link>
-            <Nav.Link href="/notes">All notes</Nav.Link>
+            <Nav.Link href="/tasks">Task Manager</Nav.Link>
+            <Nav.Link href="/notes">Notes Manager</Nav.Link>
             <NavDropdown title="Create zone" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">New task</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

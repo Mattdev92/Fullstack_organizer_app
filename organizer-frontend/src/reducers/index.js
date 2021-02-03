@@ -11,12 +11,18 @@ function rootReducer(state = initialState, action) {
         notes: [],
       };
     }
+    case "DELETE_NOTE": {
+      return {
+        ...state,
+        notes: [...state.notes.filter((note)=>note.id!==action.payload.id)],
+      };
+    }
     case "ADD_NOTES": {
       return {
         ...state,
         notes: [
           ...state.notes,
-          { title: action.payload.title, note: action.payload.note,category: action.payload.category },
+          { title: action.payload.title, note: action.payload.note,category: action.payload.category, id:action.payload.id },
         ],
       };
     }
