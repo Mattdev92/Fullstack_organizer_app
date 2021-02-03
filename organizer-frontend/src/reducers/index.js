@@ -16,7 +16,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         notes: [
           ...state.notes,
-          { title: action.payload.title, note: action.payload.note },
+          { title: action.payload.title, note: action.payload.note,category: action.payload.category },
         ],
       };
     }

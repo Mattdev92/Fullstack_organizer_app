@@ -8,16 +8,10 @@ import { fetchNotes } from "../../actions";
 
 const Notes = ({ notes, fetchNotes }) => {
   const [getNotes, setGetNotes] = useState(false);
-  console.log(notes);
   return (
     <>
-      <Nav />
-      <div className={styles.wrapper}>
-        {notes.map((item, i) => {
-          return <Note item={item} key={i} />;
-        })}
-      </div>
-      {getNotes === false && (
+    <Nav /> 
+    {getNotes === false ? (
         <div className={styles.noteButton}>
           <Button
             variant="primary"
@@ -29,7 +23,21 @@ const Notes = ({ notes, fetchNotes }) => {
             Get your notes
           </Button>
         </div>
-      )}
+      ):<div className={styles.refreshButtonWrapper}>
+        <Button
+            variant="success"
+            onClick={() => {
+              fetchNotes();
+            }}
+          >Refresh</Button>
+      </div> }
+             
+      <div className={styles.wrapper}>
+        {notes.map((item, i) => {
+          return <Note item={item} key={i} />;
+        })}
+      </div>
+      
     </>
   );
 };
