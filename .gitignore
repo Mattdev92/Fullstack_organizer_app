@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/organizer-backend/.env
+/organizer-backend/node_modules
+# dependencies
+/organizer-frontend/node_modules
+/organizer-frontend/.pnp
+/organizer-frontend.pnp.js
+
+# testing
+/organizer-frontend/coverage
+
+# production
+/organizer-frontend/build
+
+# misc
+/organizer-frontend/.DS_Store
+/organizer-frontend/.env.local
+/organizer-frontend/.env.development.local
+/organizer-frontend/.env.test.local
+/organizer-frontend/.env.production.local
+
+/organizer-frontend/npm-debug.log*
+/organizer-frontend/yarn-debug.log*
+/organizer-frontend/yarn-error.log*
+organizer-fullstack.code-workspace

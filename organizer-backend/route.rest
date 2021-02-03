@@ -1,0 +1,30 @@
+//get all notes
+GET http://localhost:5000/notes
+
+//get specific note by id
+###
+GET http://localhost:5000/notes/60117c7fa9d1d0a5cbe99138
+
+//delete specific note
+###
+DELETE http://localhost:5000/notes/60117c7fa9d1d0a5cbe99138
+
+//create note
+###
+POST http://localhost:5000/notes
+Content-Type: application/json
+
+{
+    "title" : "OSI layers - networking", 
+    "note": "7-layer OSI chierarchy",
+    "category": "Programming"
+}
+
+//update specific note 
+###
+PATCH http://localhost:5000/notes/6011a30529b10ab5bdf43c68
+Content-Type: application/json
+
+{
+    "note": "Hey ! Third message !!!!"
+}
