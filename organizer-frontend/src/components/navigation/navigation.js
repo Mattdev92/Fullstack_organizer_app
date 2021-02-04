@@ -22,22 +22,10 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/tasks">Task Manager</Nav.Link>
             <Nav.Link href="/notes">Notes Manager</Nav.Link>
             <NavDropdown title="Create zone" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">New task</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Delete task
-              </NavDropdown.Item>
               <NavDropdown.Item onClick={()=>setCreateModal(true)}>
                 New note
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Delete note
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Check callendar
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

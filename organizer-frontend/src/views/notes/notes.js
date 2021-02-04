@@ -1,43 +1,37 @@
-import React, { useState } from "react";
+import React, {useState, useEffect } from "react";
 import Nav from "../../components/navigation/navigation";
 import Note from "../../components/note/note";
 import styles from "./notes.module.scss";
 import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchNotes } from "../../actions";
-
+import Add from "../../assets/add.svg";
+import Create from '../create/create';
 const Notes = ({ notes, fetchNotes }) => {
-  const [getNotes, setGetNotes] = useState(false);
+  const [createModal,setCreateModal]=useState(false);
+  useEffect(() => {
+    fetchNotes();
+  }, [fetchNotes]);
   return (
     <>
-    <Nav /> 
-    {getNotes === false ? (
-        <div className={styles.noteButton}>
-          <Button
-            variant="primary"
-            onClick={() => {
-              setGetNotes(true);
-              fetchNotes();
-            }}
-          >
-            Get your notes
-          </Button>
-        </div>
-      ):<div className={styles.refreshButtonWrapper}>
+      <Nav />
+      <Create show={createModal} onHide={() => setCreateModal(false)} />
+      <div className={styles.refreshButtonWrapper}>
         <Button
-            variant="success"
-            onClick={() => {
-              fetchNotes();
-            }}
-          >Refresh</Button>
-      </div> }
-             
+          variant="success"
+          onClick={() => {
+            fetchNotes();
+          }}
+        >
+          Refresh
+        </Button>
+      </div>
       <div className={styles.wrapper}>
         {notes.map((item, i) => {
           return <Note item={item} key={i} />;
         })}
+        <img src={Add} className={styles.add} alt="add" onClick={()=>setCreateModal(true)} />
       </div>
-      
     </>
   );
 };
