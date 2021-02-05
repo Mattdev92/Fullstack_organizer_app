@@ -7,8 +7,8 @@ const Note = ({ item }) => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   return (
     <div className={styles.wrapper}>
-      <Card bg="dark" text="light" style={{ width: "18rem" }} className="mb-2">
-        <Card.Header>{item.category}</Card.Header>
+      <Card bg="light" text="dark" style={{ width: "18rem", height:"300px",}} className="mb-2">
+        <Card.Header className={styles.category}>{item.category}</Card.Header>
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>{item.note}</Card.Text>
