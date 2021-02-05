@@ -8,12 +8,14 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const mongoose=require('mongoose');
 const notesRouter = require('./routes/notes');
+const userRouter = require('./routes/user');
 
 
 //Middleweres
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/notes',notesRouter)
+app.use('/register',userRouter)
 
 //Connecting to database
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser:true})
