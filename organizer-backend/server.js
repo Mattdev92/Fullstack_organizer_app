@@ -14,11 +14,11 @@ const userRouter = require('./routes/user');
 //Middleweres
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/notes',notesRouter)
-app.use('/register',userRouter)
+app.use('/notes',notesRouter);
+app.use('/user',userRouter);
 
 //Connecting to database
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser:true})
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db=mongoose.connection;
 
 //Getting information about database status

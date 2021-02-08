@@ -2,12 +2,12 @@
 const express = require('express');
 const Notes = require('../models/note');
 const router = express.Router();
-
+const verify = require('./privateRoutes');
 //Creating routes 
 
 //Getting all Notes FROM Database
-router.get('/',async (req,res)=>{
-    try{
+router.get('/',verify,async (req,res)=>{
+    try{ 
         const notes = await Notes.find()
         res.json(notes)
     }catch(err){

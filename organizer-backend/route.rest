@@ -28,3 +28,24 @@ Content-Type: application/json
 {
     "note": "Hey ! Third message !!!!"
 }
+
+//create user
+###
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "name" : "edi", 
+    "email": "emiedi@email.com",
+    "password": "1234567"
+}
+
+//login
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "email": "emiedi@email.com",
+    "password": "1234567"
+}

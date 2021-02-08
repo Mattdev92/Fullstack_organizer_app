@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const authSchema = new mongoose.Schema({
     name:{
         type:String,
-        erquired:true,
+        required:true,
         min: 6,
         max:255
     },
     email:{
         type:String,
-        erquired:true,
+        required:true,
         min: 6,
         max:30
     },
