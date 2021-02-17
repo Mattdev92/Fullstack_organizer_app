@@ -4,6 +4,7 @@ import Main from './main/main';
 import Notes from './notes/notes';
 import Tasks from './tasks/tasks';
 import Create from './create/create';
+import Register from './register/register';
 import {Provider} from 'react-redux';
 import store from '../store/store';
 const Root = ()=>{
@@ -12,6 +13,7 @@ const Root = ()=>{
     <BrowserRouter>
     <Switch>
         <Route exact path="/" component={Main}/>
+        <Route exact path="/register" component={Register}/>
         <Route exact path="/notes" component={Notes}/>
         <Route exact path="/tasks" component={Tasks}/>
         <Route path="/notes/create" component={Create}/>

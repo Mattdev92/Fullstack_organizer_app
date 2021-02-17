@@ -16,24 +16,22 @@ router.get('/',verify,async (req,res)=>{
 })
 
 //Creating note and saving to database
-router.post('/',async (req,res)=>{
+router.post('/',verify,async(req,res)=>{
     const note = new Notes({
         title: req.body.title,
         note: req.body.note,
         category: req.body.category,
     }) 
-
     try{
         const newNote = await note.save();
         res.status(201).json(newNote)
     }catch(err){
         res.status(400).json({message:err.message})
     }
-
 })
 //Getting specific note
 
-router.get('/:noteId',async(req,res)=>{
+router.get('/:noteId',verify,async(req,res)=>{
    const note= await Notes.findById(req.params.noteId)
 try{
     res.json(note)
@@ -43,7 +41,7 @@ res.json({message: err})
 })
 //Removing specific note
 
-router.delete('/:noteId',async(req,res)=>{
+router.delete('/:noteId',verify,async(req,res)=>{
     const removedNote =await Notes.remove({_id: req.params.noteId});
 try{
    res.json(removedNote);
@@ -53,7 +51,7 @@ res.json({message: err})
 })
 //Updating specific note
 
-router.patch('/:noteId',async(req,res)=>{
+router.patch('/:noteId',verify,async(req,res)=>{
     const updatedNote =await Notes.updateOne({_id: req.params.noteId},{note:req.body.note});
 try{
    res.json(updatedNote);

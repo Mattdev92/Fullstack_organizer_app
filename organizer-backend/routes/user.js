@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
   const user = new User({
-    name: req.body.name,
+    userName: req.body.userName,
     email: req.body.email,
     password: hashedPassword,
   });
@@ -36,7 +36,6 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   ///validate data
-
   //checking if the email exists
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
@@ -46,7 +45,7 @@ router.post("/login", async (req, res) => {
   if (!validPass) return res.status(400).send("Invalid password");
   //Crete and assign a token
   const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET);
-    res.header('auth-token',token).send(token);
+  res.header("auth-token",token).send(token);
 });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 //Creating schema of Authorization
 const authSchema = new mongoose.Schema({
-    name:{
+    userName:{
         type:String,
         required:true,
         min: 6,
