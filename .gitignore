@@ -23,3 +23,5 @@
 /organizer-frontend/yarn-debug.log*
 /organizer-frontend/yarn-error.log*
 organizer-fullstack.code-workspace
+#readme
+README.md
