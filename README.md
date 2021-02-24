@@ -29,25 +29,25 @@ Project was prepared using Express framework:
 
 npm install express
 
-Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.\
 npm install --save-dev nodemon
 
-Mongoose - framework for mongodb
+Mongoose - framework for mongodb\
 npm install mongoose
 
-A library to help you hash passwords.
+A library to help you hash passwords.\
 npm install bcrypt
 
-Json-web-token
+Json-web-token\
 npm install jwt
 
-Body-parser
+Body-parser\
 npm install body-parser
 
-CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.\
 npm install cors
 
-Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env\
 npm install dotenv
 
 ### Installing Frontend
@@ -57,19 +57,19 @@ Project was prepared based on CRA template with Bootstrap funcionality.
 
 npx create-react-app my-app --template cra-template-with-bootstrap
 
-React router and React router Dom
+React router and React router Dom\
 npm install --save react-router react-router-dom
 
-State managment:
+State managment:\
 npm install--save react-redux redux
 
-Thunk middleware for Redux. This library enables to use ansyc funcionality with redux
+Thunk middleware for Redux. This library enables to use ansyc funcionality with redux\
 npm install --save redux-thunk
 
-Promise based HTTP client for the browser
+Promise based HTTP client for the browser\
 npm install axios
 
-Node sass
+Node sass\
 npm install node-sass
 
 ## Authors
