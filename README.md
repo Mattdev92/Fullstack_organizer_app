@@ -22,8 +22,10 @@ Implemented solutions:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Installing Backend 
-What things you need to install the software and how to install them
+After clone this project the only thing you nedd to do to start this application is installing node modules by typing "npm install" in console in backend folder as well as in frontend part of the project. Then start localhost by typing "npm start" in console in frontend part of the project and alson start the backend server in backend part (commend available in json files)
+
+### How did I create this project - Backend 
+What things you need to install  and how to install them
 
 Project was prepared using Express framework:
 
@@ -50,7 +52,7 @@ npm install cors
 Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env\
 npm install dotenv
 
-### Installing Frontend
+### How did I create this project - Frontend
 What things you need to install the software and how to install them
 
 Project was prepared based on CRA template with Bootstrap funcionality.
